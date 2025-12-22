@@ -36,10 +36,10 @@
 # print ("py" in text)
 import math
 
-person = { "first name": "Join", "last name":"Smith"}
-s = [1,2,3]
-print( 0 in s)
-print(person["first name"])
+# person = { "first name": "Join", "last name":"Smith"}
+# s = [1,2,3]
+# print( 0 in s)
+# print(person["first name"])
 
 # not and or
 #  <= ^ ==
