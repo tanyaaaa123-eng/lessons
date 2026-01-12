@@ -33,7 +33,7 @@ print(sum)
 # d = int(input())
 # a = 1
 # while a <= d:
-#     s = s + (s/c)
+#     s = s * ( 1 + c / 100) проценты прибавляем
 #     a = a + 1
 #     print(round(s,3))
 # Напишите программу вычисления факториала натурального числа, введённого с клавиатуры.
@@ -64,4 +64,21 @@ print(sum)
 #     c = str(c)
 #     m = m + c
 #     if d < 2:
-#         print(d,m[::- 1],sep = "")
+#print(d,m[::- 1],sep = "")
+# n = int(input())
+# b = ""
+# if n == 0:
+#     b = 0
+# while n > 0:
+#     b = str(n % 2) + b
+#     n = n // 2
+# print(b)
+# 6
+# n = int(input())
+# b = ""
+# if n == 0:
+#     b = 0
+# while n > 0:
+#         b = str(n%6) + b
+#         n = n // 6
+# print(b)
