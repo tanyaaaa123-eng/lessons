@@ -81,4 +81,4 @@ print(sum)
 # while n > 0:
 #         b = str(n%6) + b
 #         n = n // 6
-# print(b)
+# print(b)\
