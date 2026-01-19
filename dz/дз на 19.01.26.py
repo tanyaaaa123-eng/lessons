@@ -18,7 +18,8 @@ res = " "
 for i in range(len(a)):
     if (i+1)%3==0:
         res = res+ "*"
-    res=res + str(i)
+    else:
+        res=res + str([i])
 print(res)
 # Найдите в строке самую длинную подстроку,
 # которая является палиндромом.
@@ -38,3 +39,30 @@ print(res)
 # Каждый третий символ
 # Самую длинную подстроку, расположенную между двумя повторяющимися символами
 a = input()
+print(a[2::3])
+# подстрока
+maxim=0
+s =" "
+result = " "
+for i in range(len(a)):
+    c = 0
+    s = ""
+    for j in range(i+1,len(a)):
+        if a[i]==a[j]:
+            if c>maxim:
+                maxim=c
+                result=s
+        c = c + 1
+        s+=a[j]
+print(result)
+# а встр
+for i in range(len(a)):
+    c= 1
+    s = ""
+    for j in range(i+1,len(a)):
+        if a[i]==a[j]:
+            c+=1
+        if maxim<c:
+            maxim=c
+            result = a[i]
+print(result,maxim)
