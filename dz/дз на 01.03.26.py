@@ -16,14 +16,12 @@ def r1(line):
         return True
 def r2(line):
     b = line.copy()
-    b.remove(max(line))
-    b.remove(min(line))
+    mx = (max(line))
+    s1 = (min(line))
     c = 0
-    for i in b:
-        if i > 23:
-            c+=1
-    if c == 2:
-        return True
+    for i in line:
+        if i > 23 and i not in(mx,s1):
+            return True
 count = 0
 for j in d:
     if r1(j) and r2(j):
@@ -40,6 +38,7 @@ print(count)
 #     d = []
 #     for line in f:
 #         l = list(map(int,line.split("\t")))
+
 #         d.append(l)
 # def r1(line):
 #     a = []
@@ -70,7 +69,7 @@ with open("925.txt",mode="r",encoding="utf-8") as f:
     f.readline()
     d = []
     for line in f:
-        d.extend(list(map(float,line.replase(",","."), line.split()[1:])))
+        d.extend(list(map(float,line.replace(",","."), line.split()[1:])))
 a = []
 for i in d:
     if i > 9.0:
