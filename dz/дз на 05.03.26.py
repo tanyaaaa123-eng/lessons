@@ -43,16 +43,21 @@ print(c,min(e))
 with open("1724.txt",mode="r",encoding="utf-8") as f:
     l = list(map(int,f))
 maxx = max(l)
-c = 0
 summ = []
 for i in range(len(l)-2):
+    count = 0
     a1 = l[i]
     a2 = l[i+1]
     a3 = l[i+2]
-    if ((a1 + a2 + a3)  < maxx ) and (a1 %10 == 0 or a2%10==0 or a3%10==0):
-        c+=1
+    if a1%10==0:
+        count+=1
+    if a2%10==0:
+        count+=1
+    if a3%10==0:
+        count+=1
+    if count == 1 and((a1 + a2 + a3)  < maxx ) :
         summ.append(a1 + a2 + a3)
-print(c,min(summ))
+print(len(summ),min(summ))
 
 
 
