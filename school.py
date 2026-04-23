@@ -29,14 +29,34 @@
 #     if all(((2*x+y!=70)or(x<y)or(A<x)) for x in range(0,100) for y in range(0,100)):
 #         print(A)
 #файлы
-with open("17-1.txt",mode="r",encoding="utf-8") as f:
-    l = list(map(int,f))
-    c = []
-    for i in range(len(l)):
-        for j in range(i+1,len(l)):
-            a1 = l[i]
-            a2 = l[j]
-            if (a1+a2)%17==0:
-                c.append(a1+a2)
-print(len(c),max(c))
-
+# with open("17-1.txt",mode="r",encoding="utf-8") as f:
+#     l = list(map(int,f))
+#     c = []
+#     for i in range(len(l)):
+#         for j in range(i+1,len(l)):
+#             a1 = l[i]
+#             a2 = l[j]
+#             if (a1+a2)%17==0:
+#                 c.append(a1+a2)
+# print(len(c),max(c))
+# def staircase(n):
+#     for i in range(1,n+1):
+#         print("*" * i)
+# n = int(input())
+# staircase(n)
+def triangle_type(a, b, c):
+    n = []
+    n.append(a)
+    n.append(b)
+    n.append(c)
+    n1 = set(n)
+    if len(n)==len(n1):
+        print("Обычный треугольник")
+    if len(n)-len(n1)==1:
+        print("Равнобедренный треугольник")
+    if len(n)-len(n1)==2:
+        print("Равносторонний треугольник")
+a = int(input())
+b = int(input())
+c = int(input())
+triangle_type(a, b, c)
