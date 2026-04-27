@@ -37,18 +37,18 @@ with open("2610.txt") as f:
     c = []
     for i in f:
         a = list(map(int,i.split()))
-        k={"long":a[0],"start":a[1]}
+        k={"start":a[1],"end":a[1]+a[0]}
         c.append(k)
 e=sorted(c,key=lambda num:num["start"])
-e=sorted(e,key=lambda num:num["long"])
+e=sorted(e,key=lambda num:num["end"])
 ee=[e[0]]
 for i in e[1:]:
-    if i["long"]+i["start"]>=ee[-1]["start"]+ee[-1]["long"]:
+    if i["start"]>=ee[-1]["end"]:
         ee.append(i)
 l = 0
 for i in e:
-    if ee[-2]["start"]+ee[-2]["long"]<=i["start"]:
-        l=max(l,i["start"]-(ee[-2]["start"]+ee[-2]["long"]))
+    if ee[-2]["end"]<=i["start"]:
+        l=max(l,i["start"]-ee[-2]["end"])
 print(len(ee),l)
 
 
