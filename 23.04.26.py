@@ -46,22 +46,22 @@
 # хотя бы один студент имеет более двух «двоек». Во входном файле все ID различны.
 # В ответе запишите два целых положительных числа: сначала ID студента,
 # который занимает последнее место среди
-with open("2604.txt")as f:
-    N = f.readline()
-    data=[]
-    for line in f:
-        s=list(map(int,line.split()))
-        m = [s[1],s[2],s[3],s[4]]
-        k={"ID":s[0],"s_1":s[1],"s_2":s[2],"s_3":s[3],"s_4":s[4],"m":sum(m)/len(m),"two":m.count(2)}
-        data.append(k)
-data1=sorted(data,key = lambda x:(-x["m"],x["two"],x["ID"]))
-h = N//4
-answ_1 = data[h-1]["ID"]
-for i in data:
-    if i["two"]>2:
-        print(i["ID"])
-        break
-print(answ_1)
+# with open("2604.txt")as f:
+#     N = f.readline()
+#     data=[]
+#     for line in f:
+#         s=list(map(int,line.split()))
+#         m = [s[1],s[2],s[3],s[4]]
+#         k={"ID":s[0],"s_1":s[1],"s_2":s[2],"s_3":s[3],"s_4":s[4],"m":sum(m)/len(m),"two":m.count(2)}
+#         data.append(k)
+# data1=sorted(data,key = lambda x:(-x["m"],x["two"],x["ID"]))
+# h = N//4
+# answ_1 = data[h-1]["ID"]
+# for i in data:
+#     if i["two"]>2:
+#         print(i["ID"])
+#         break
+# print(answ_1)
 # s = {"Маша":5,"егор":4}
 # k = sorted(s.items(),key=lambda x:(-x[1],x[0]))
 

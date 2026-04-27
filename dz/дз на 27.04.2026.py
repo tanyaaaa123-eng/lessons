@@ -35,9 +35,11 @@ with open("2619.txt")as f:
            "минимальное":min(k),"тип":"время шлифовки" if min(k)==k[0] else "время окрашивания"}
         c.append(a)
 c1 = sorted(c,key=lambda x:x["минимальное"])
-print(c1[-1]["номер"],len(c1)-1)
-
-
+counter = 0
+for i in c1[-1]:
+    if i["тип"]=="время шлифовки":
+        counter+=1
+print(c1[-1]["номер"],counter)
 
 #
 # **Задание 2**
@@ -88,12 +90,24 @@ print(c1[-1]["номер"],len(c1)-1)
 # второй, четвёртый и пятый граждане. Наименьший номер окна, где последний
 # из граждан будет принят специалистом, — 1, так как будут свободны окна 1 и 2.
 with open("2620.txt")as f:
-    a = f.readline()
-    a1 = f.readline()
+    a = int(f.readline())
+    a1 = int(f.readline())
     c = []
     for i in f:
         k = list(map(int, i.split()))
         b = {"время начала":k[0],"время окончания":k[1]}
         c.append(b)
 c1 = sorted(c,key=lambda x:x["время начала"])
-print(c1)
+ending_work = [0]*(a+1)
+clients = 0
+last_plase = 0
+for data in c1:
+    for window in range(1,a+1):
+        if ending_work[window]< data["время начала"]:
+            ending_work[window]=data["время окончания"]
+            clients+=1
+            last_plase= window
+            print(data,window)
+            break
+print(clients,last_plase)
+
