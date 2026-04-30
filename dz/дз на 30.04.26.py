@@ -31,6 +31,10 @@ count=[c1[0]]
 for i in c1[1:]:
     if sum(count)+i < a1[0]:
         count.append(i)
+count = count[:-1]
+for i in c1[::-1]:
+    if i <= a1[0]-sum(count):
+        count.append(i)
 print(len(count),count[-1])
 # ответ 3105 44
 # Задание 2 - новый тип
@@ -60,17 +64,27 @@ print(len(count),count[-1])
 # номер спортсмена и номер посещённой им контрольной точки.
 #
 # Запишите в ответе два целых неотрицательных числа:
-# максимальное число спортсменов с идущими подряд номерами, посетивших одну и ту же точку, и номер этой точки.
-with open("2621.txt")as f:
-    a1 = int(f.readline())
-    c = []
-    for i in f:
-        k = list(map(int, i.split()))
-        b = {"номер спортсмена": k[0], "номер точки ": k[1]}
-        c.append(b)
-c1 = sorted(c,key = lambda x:x["номер спортсмена"])
-numbers=[c1[0]["номер спортсмена"]]
-for i in range(1,len(c1)-1):
-    if numbers[-1] + 1 == c1[i]["номер спортсмена"]:
-        numbers.append(c1[i]["номер спортсмена"])
+# максимальное число спортсменов с идущими подряд номерами, посетивших одну и ту же точку,
+# и номер этой точки.
+# with open("2621.txt")as f:
+#     a1 = int(f.readline())
+#     c = []
+#     for i in f:
+#         k = list(map(int, i.split()))
+#         b = {"номер спортсмена": k[0], "номер точки ": k[1]}
+#         c.append(b)
+# c1 = sorted(c,key = lambda x:(x["номер точки"],x["номер спортсмена"]))
+# current = 1
+# max_current = 0
+# point = None
+# for i in range(1,len(c1)):
+#     if (c1[i-1]["номер спортсмена"] + 1 == c1[i]["номер спорстмена"]) and c1[i-1]["номер точик"]==c1[i]["номер точки"]:
+#         current+=1
+#         if current>max_current:
+#             max_current = current
+#             point=c1[i]["номер точки"]
+#     else:
+#         current=1
+# print(max_current,point)
+
 
