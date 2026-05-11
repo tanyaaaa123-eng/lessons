@@ -29,5 +29,7 @@ def f(n):
         return 3*f(n-1)-n
 for n in range(1,2025):
     f(n)
-print((f(2025)-f(2023)-1)//32022)
+print((f(2025)-f(2023)-1)/3**2022)
+
+
 
